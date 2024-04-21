@@ -1,14 +1,18 @@
 import { useEffect, useState, FC } from 'react';
 import { io, Socket } from 'socket.io-client';
-import { fetchSensorData } from '../utils/dataFetcher';
 import SensorDataTable from './SensorDataTable';
+import SensorDataForm from './SensorDataForm';
+import axios from 'axios';
 
-interface SensorData {
+export interface SensorData {
   sensorId: string;
   type: string;
   value: number;
   timestamp: string;
 }
+const host = import.meta.env.VITE_API_URL;
+const url = `${host}/sensors/data`
+
 
 const SensorDataDashboard: FC = () => {
   const [sensorData, setSensorData] = useState<SensorData[]>([]);
@@ -16,7 +20,8 @@ const SensorDataDashboard: FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchSensorData(); 
+        const result = await axios.get<SensorData[]>(url);
+        const data = result.data
         setSensorData(data);
       } catch (error: any) {
         console.error('Error fetching sensor data:', error.message, error.stack);
@@ -26,7 +31,7 @@ const SensorDataDashboard: FC = () => {
     fetchData();
 
     // Establish WebSocket connection
-    const socket: Socket = io(import.meta.env.VITE_API_URL);
+    const socket: Socket = io(host);
 
     socket.on('connect', () => {
       console.log('Dashboard WebSocket connected');
@@ -35,7 +40,7 @@ const SensorDataDashboard: FC = () => {
 
     // Listen for real-time updates
     socket.on('sensorData', (newData: SensorData[]) => {
-      console.log('Received new sensor data 1', newData);
+
 
       if (Array.isArray(newData)) {
         setSensorData((prevData) => {
@@ -45,7 +50,6 @@ const SensorDataDashboard: FC = () => {
           });
           return updatedData;
         });
-        console.log('Received new sensor data', newData);
       } else {
         console.error('Received data is not in expected array format:', newData);
       }
@@ -57,7 +61,27 @@ const SensorDataDashboard: FC = () => {
     };
   }, []);
 
-  return (<SensorDataTable sensorData={sensorData} />);
+  const handleSubmit = async (postData:SensorData) => {
+
+    try {
+      await axios.post(url, postData);
+      console.log("Sensor data submitted successfully");
+      return true
+    } catch (error: any) {
+      console.error(
+        "Error submitting sensor data:",
+        error.message,
+        error.stack
+      );
+    }
+  };
+
+  return (
+    <>
+      <SensorDataForm onSubmit={handleSubmit} />
+      <SensorDataTable sensorData={sensorData} />
+    </>
+  );
 };
 
 export default SensorDataDashboard;

@@ -1,4 +1,4 @@
-import { render, screen, act, cleanup } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import axios from "axios";
 import SensorDataDashboard from "./SensorDataDashboard";
 
@@ -23,6 +23,11 @@ describe("Sensor Data Table", () => {
   });
 
   test("renders the dashboard correctly", async () => {
+    const mockDate = new Date(1466424490000)
+    jest
+      .spyOn(global, 'Date')
+      .mockImplementation(() => mockDate)
+
     const { container } = render(<SensorDataDashboard />);
 
     const sensorTypeElement = await screen.findByText("temperature");

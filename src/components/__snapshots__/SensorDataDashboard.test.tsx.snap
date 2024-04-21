@@ -3,6 +3,184 @@
 exports[`Sensor Data Table renders the dashboard correctly 1`] = `
 <div>
   <div
+    class="tremor-Card-root relative w-full text-left ring-1 rounded-tremor-default bg-tremor-background ring-tremor-ring shadow-tremor-card dark:bg-dark-tremor-background dark:ring-dark-tremor-ring dark:shadow-dark-tremor-card border-tremor-brand dark:border-dark-tremor-brand p-4"
+  >
+    <form
+      class="space-y-4"
+    >
+      <div
+        class="tremor-TextInput-root relative w-full flex items-center min-w-[10rem] outline-none rounded-tremor-default transition duration-100 border shadow-tremor-input dark:shadow-dark-tremor-input bg-tremor-background dark:bg-dark-tremor-background hover:bg-tremor-background-muted dark:hover:bg-dark-tremor-background-muted text-tremor-content dark:text-dark-tremor-content border-tremor-border dark:border-dark-tremor-border"
+      >
+        <input
+          class="tremor-TextInput-input w-full bg-transparent focus:outline-none focus:ring-0 border-none text-tremor-default rounded-tremor-default transition duration-100 py-2 text-tremor-content-emphasis dark:text-dark-tremor-content-emphasis [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none pr-3 pl-3 placeholder:text-tremor-content dark:placeholder:text-dark-tremor-content"
+          data-testid="base-input"
+          placeholder="Sensor ID"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="w-full min-w-[10rem] relative text-tremor-default"
+      >
+        <select
+          class="h-full w-full absolute left-0 top-0 z-0 opacity-0"
+          title="select-hidden"
+        >
+          <option
+            class="hidden"
+            disabled=""
+            hidden=""
+            value=""
+          >
+            Type
+          </option>
+          <option
+            class="hidden"
+            value=""
+          >
+            Select Type
+          </option>
+          <option
+            class="hidden"
+            value="temperature"
+          >
+            Temperature
+          </option>
+          <option
+            class="hidden"
+            value="humidity"
+          >
+            Humidity
+          </option>
+          <option
+            class="hidden"
+            value="windSpeed"
+          >
+            Wind Speed
+          </option>
+          <option
+            class="hidden"
+            value="windDirection"
+          >
+            Wind Direction
+          </option>
+          <option
+            class="hidden"
+            value="pH"
+          >
+            pH
+          </option>
+        </select>
+        <div
+          class="w-full min-w-[10rem] relative text-tremor-default"
+          data-headlessui-state=""
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            class="w-full outline-none text-left whitespace-nowrap truncate rounded-tremor-default focus:ring-2 transition duration-100 border pr-8 py-2 shadow-tremor-input focus:border-tremor-brand-subtle focus:ring-tremor-brand-muted dark:shadow-dark-tremor-input dark:focus:border-dark-tremor-brand-subtle dark:focus:ring-dark-tremor-brand-muted pl-3 bg-tremor-background dark:bg-dark-tremor-background hover:bg-tremor-background-muted dark:hover:bg-dark-tremor-background-muted text-tremor-content dark:text-dark-tremor-content border-tremor-border dark:border-dark-tremor-border"
+            data-headlessui-state=""
+            id="headlessui-listbox-button-:r0:"
+            type="button"
+          >
+            <span
+              class="w-[90%] block truncate"
+            >
+              Type
+            </span>
+            <span
+              class="absolute inset-y-0 right-0 flex items-center mr-3"
+            >
+              <svg
+                class="tremor-Select-arrowDownIcon flex-none h-5 w-5 text-tremor-content-subtle dark:text-dark-tremor-content-subtle"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="tremor-NumberInput-root relative w-full flex items-center min-w-[10rem] outline-none rounded-tremor-default transition duration-100 border shadow-tremor-input dark:shadow-dark-tremor-input bg-tremor-background dark:bg-dark-tremor-background hover:bg-tremor-background-muted dark:hover:bg-dark-tremor-background-muted text-tremor-content dark:text-dark-tremor-content border-tremor-border dark:border-dark-tremor-border"
+      >
+        <input
+          class="tremor-NumberInput-input w-full bg-transparent focus:outline-none focus:ring-0 border-none text-tremor-default rounded-tremor-default transition duration-100 py-2 text-tremor-content-emphasis dark:text-dark-tremor-content-emphasis [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none pr-3 pl-3 placeholder:text-tremor-content dark:placeholder:text-dark-tremor-content"
+          data-testid="base-input"
+          placeholder="Value"
+          type="number"
+          value="0"
+        />
+        <div
+          class="flex justify-center align-middle"
+        >
+          <div
+            class="cursor-pointer hover:text-tremor-content dark:hover:text-dark-tremor-content flex mx-auto text-tremor-content-subtle dark:text-dark-tremor-content-subtle group py-[10px] px-2.5 border-l border-tremor-border dark:border-dark-tremor-border"
+            tabindex="-1"
+          >
+            <svg
+              class=" h-4 w-4 duration-75 transition group-active:scale-95"
+              data-testid="step-down"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 12H4"
+              />
+            </svg>
+          </div>
+          <div
+            class="cursor-pointer hover:text-tremor-content dark:hover:text-dark-tremor-content flex mx-auto text-tremor-content-subtle dark:text-dark-tremor-content-subtle group py-[10px] px-2.5 border-l border-tremor-border dark:border-dark-tremor-border"
+            tabindex="-1"
+          >
+            <svg
+              class=" h-4 w-4 duration-75 transition group-active:scale-95"
+              data-testid="step-up"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="tremor-TextInput-root relative w-full flex items-center min-w-[10rem] outline-none rounded-tremor-default transition duration-100 border shadow-tremor-input dark:shadow-dark-tremor-input bg-tremor-background dark:bg-dark-tremor-background hover:bg-tremor-background-muted dark:hover:bg-dark-tremor-background-muted text-tremor-content-emphasis dark:text-dark-tremor-content-emphasis border-tremor-border dark:border-dark-tremor-border"
+      >
+        <input
+          class="tremor-TextInput-input w-full bg-transparent focus:outline-none focus:ring-0 border-none text-tremor-default rounded-tremor-default transition duration-100 py-2 text-tremor-content-emphasis dark:text-dark-tremor-content-emphasis [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none pr-3 pl-3 placeholder:text-tremor-content dark:placeholder:text-dark-tremor-content"
+          data-testid="base-input"
+          placeholder="Timestamp"
+          type="text"
+          value="2016-06-20T12:08:10.000Z"
+        />
+      </div>
+      <button
+        class="tremor-Button-root shrink-0 inline-flex justify-center items-center group font-medium outline-none rounded-tremor-default border shadow-tremor-input dark:shadow-dark-tremor-input px-4 py-2 text-sm text-tremor-brand-inverted dark:text-dark-tremor-brand-inverted bg-tremor-brand dark:bg-dark-tremor-brand border-tremor-brand dark:border-dark-tremor-brand hover:border-tremor-brand-emphasis dark:hover:border-dark-tremor-brand-emphasis opacity-50 cursor-not-allowed"
+        disabled=""
+        type="submit"
+      >
+        <span
+          class="tremor-Button-text text-tremor-default whitespace-nowrap"
+        >
+          Submit
+        </span>
+      </button>
+    </form>
+  </div>
+  <div
     class="mx-auto"
   >
     <div

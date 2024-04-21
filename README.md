@@ -1,10 +1,8 @@
 # Plantix Coding Challenge
 
-A comprehensive solution for real-time farm sensor data management and visualization, Plantix leverages modern web technologies to provide an intuitive and efficient platform for monitoring various environmental parameters crucial for farm management.
-
 ## Overview
 
-The project is structured into two main components: a backend system developed with Nest.js and TypeScript, and a frontend interface built using React with TypeScript. The backend handles sensor data using RESTful API endpoints and WebSocket connections for real-time updates, while the frontend provides a dashboard for data display.
+The project is structured into two main components: a backend system developed with Nest.js and Prisma with TypeScript, and a frontend interface built using React with TypeScript. The backend handles sensor data using RESTful API endpoints and WebSocket connections for real-time updates, while the frontend provides a dashboard for data display.
 
 ### Backend
 - **Framework**: Nest.js with TypeScript and socket gateway
@@ -42,9 +40,11 @@ The project is structured into two main components: a backend system developed w
    - go to root folder
    - `cd backend`
    - `npm start`
-4. In a new terminal, start the frontend application in a new terminal:
+
+4. start the frontend application in a new terminal:
    - go to root folder
    - `npm start`
+
 5. Start the fake data generator In a new terminal:
    - go to root folder
    - `cd backend`
